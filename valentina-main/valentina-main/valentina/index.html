@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Care | Cosmetología por Valentina</title>
+    
+    <!-- Meta Etiquetas SEO -->
+    <meta name="description" content="Salud cutánea y cosmetología avanzada por Valentina. Protocolos faciales personalizados, limpieza profunda y revitalización.">
+    <meta property="og:title" content="Glow & Care | Cosmetología por Valentina">
+    <meta property="og:description" content="Tratamientos cosmetológicos VIP. Descubre tu protocolo ideal y agenda tu cita.">
+    <meta property="og:image" content="fotos/logo.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes Elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Canvas de Partículas Doradas -->
+    <canvas id="goldCanvas"></canvas>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <a href="#inicio" class="logo-link">
+            <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 15C35 15 25 28 25 45C25 65 38 80 50 85C62 80 75 65 75 45C75 28 65 15 50 15Z" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M40 38C43 35 47 35 50 38" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M50 42V55C50 58 47 60 44 60" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M42 68C46 71 54 71 58 68" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M30 30C28 22 35 18 42 22C46 25 45 32 38 32C32 32 30 30 30 30Z" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#C5A059" />
+                        <stop offset="50%" stop-color="#E8D3A7" />
+                        <stop offset="100%" stop-color="#C5A059" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="logo-texto-bloque">
+                <span class="logo-titulo">Glow & Care</span>
+                <span class="logo-subtitulo">COSMETOLOGÍA BY VALENTINA</span>
+            </div>
+        </a>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Valentina</a></li>
+                <li><a href="#ritual">El Ritual</a></li>
+                <li><a href="#servicios">Tratamientos</a></li>
+                <li><a href="#pre-cita">Cuidados Pre-Cita</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#" class="btn-nav" onclick="abrirModal()">Reservar Cita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TICKER INFINITO DE PRINCIPIOS ACTIVOS -->
+    <div class="ticker-wrapper">
+        <div class="ticker-content">
+            <span>✦ ÁCIDO HIALURÓNICO</span>
+            <span>✦ PEPTIDOS DE COLÁGENO</span>
+            <span>✦ VITAMINA C LIPOSOMADA</span>
+            <span>✦ PEELINGS BOTÁNICOS</span>
+            <span>✦ ALTA FRECUENCIA</span>
+            <span>✦ ILUMINACIÓN HYDRAGLOW</span>
+            <span>✦ OXYGEN THERAPY</span>
+            <span>✦ ÁCIDO HIALURÓNICO</span>
+            <span>✦ PEPTIDOS DE COLÁGENO</span>
+            <span>✦ VITAMINA C LIPOSOMADA</span>
+            <span>✦ PEELINGS BOTÁNICOS</span>
+            <span>✦ ALTA FRECUENCIA</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <section id="inicio" class="hero revelar">
+        <div class="hero-contenido">
+            <span class="badge-hero">🟢 Agenda Disponible para Esta Semana</span>
+            <h2>El Arte de Cuidar y Hacer Brillar tu Piel</h2>
+            <p>Protocolos cosmetológicos personalizados diseñados por Valentina para devolverle la vitalidad, salud y luminosidad natural a tu rostro.</p>
+            <div class="hero-botones">
+                <a href="#test-piel" class="btn-principal">Descubre tu Tratamiento Ideal</a>
+                <button class="btn-secundario" onclick="abrirModal()">Agendar Diagnóstico</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE VALENTINA -->
+    <section id="sobre-mi" class="sobre-seccion revelar">
+        <div class="sobre-contenedor">
+            <div class="sobre-imagen-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Valentina - Cosmetóloga Especialista">
+                <div class="sobre-badge-exp">Especialista Certificada</div>
+            </div>
+            <div class="sobre-texto">
+                <span class="subtitulo-dorado">La Mente y Corazón Detrás de Glow & Care</span>
+                <h2>Hola, soy Valentina</h2>
+                <p class="resaltado">Apasionada por la salud de la piel, la estética científica y el bienestar integral.</p>
+                <p>Fundé <strong>Glow & Care</strong> para ofrecer un santuario donde cada tratamiento se vive como un ritual relajante, seguro y respaldado por resultados reales.</p>
+                
+                <div class="pilares-grid">
+                    <div class="pilar-item">
+                        <span class="pilar-icono">✦</span>
+                        <div>
+                            <h4>Evaluación 1 a 1</h4>
+                            <p>Análisis minucioso del biotipo cutáneo antes de iniciar cualquier protocolo.</p>
+                        </div>
+                    </div>
+                    <div class="pilar-item">
+                        <span class="pilar-icono">✦</span>
+                        <div>
+                            <h4>Ciencia & Botánica</h4>
+                            <p>Principios activos dermatológicos de alta pureza y eficacia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-principal" onclick="abrirModal()">Conoce tu Piel con Valentina</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL RITUAL DE ATENCIÓN EN 4 PASOS -->
+    <section id="ritual" class="ritual-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Atención Exclusiva</span>
+            <h2 class="titulo-seccion">El Ritual de tu Sesión</h2>
+            <p class="descripcion-seccion">Cada visita está estructurada meticulosamente para garantizar confort y máxima absorción de activos.</p>
+        </div>
+
+        <div class="ritual-grid">
+            <div class="ritual-paso">
+                <span class="num-paso">01</span>
+                <h4>Diagnóstico Cutáneo</h4>
+                <p>Análisis de hidratación, nivel de sebo y sensibilidad con aparatología especializada.</p>
+            </div>
+            <div class="ritual-paso">
+                <span class="num-paso">02</span>
+                <h4>Preparación Poro a Poro</h4>
+                <p>Apertura suave mediante vapor ozono e higiene botánica profunda.</p>
+            </div>
+            <div class="ritual-paso">
+                <span class="num-paso">03</span>
+                <h4>Infusión de Activos</h4>
+                <p>Aplicación de sueros liposomalizados según las necesidades de tu piel.</p>
+            </div>
+            <div class="ritual-paso">
+                <span class="num-paso">04</span>
+                <h4>Sellado & Glow</h4>
+                <p>Mascarilla hidroplástica calmante y velo de protección solar FPS 50+.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: PREPARACIÓN PRE-CITA -->
+    <section id="pre-cita" class="precita-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Recomendaciones Profesionales</span>
+            <h2 class="titulo-seccion">Preparación para tu Visita</h2>
+            <p class="descripcion-seccion">Sigue estas indicaciones simples para optimizar los resultados de tu sesión cosmetológica.</p>
+        </div>
+
+        <div class="precita-grid">
+            <div class="precita-card">
+                <span class="precita-icono">🧼</span>
+                <h4>Rostro Limpio</h4>
+                <p>Procura asistir sin maquillaje pesado o protector solar denso para agilizar el diagnóstico inicial.</p>
+            </div>
+            <div class="precita-card">
+                <span class="precita-icono">☀️</span>
+                <h4>Evita el Sol Intenso</h4>
+                <p>No expongas tu rostro a bronceados profundos o radiación solar directa 48 horas antes de tu cita.</p>
+            </div>
+            <div class="precita-card">
+                <span class="precita-icono">🚫</span>
+                <h4>Pausa de Retinoides</h4>
+                <p>Suspende el uso de ácidos fuertes (glicólico, retinoico) o depilaciones faciales 3 días antes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEST DE PIEL INTERACTIVO -->
+    <section id="test-piel" class="test-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Diagnóstico Rápido</span>
+            <h2 class="titulo-seccion">¿Cuál es el Tratamiento Ideal para Ti?</h2>
+            <p class="descripcion-seccion">Responde 2 preguntas sencillas y recibe la recomendación experta de Valentina.</p>
+        </div>
+
+        <div class="test-card">
+            <div id="quiz-paso1" class="quiz-paso activo">
+                <h3>1. ¿Cómo sientes tu piel habitualmente?</h3>
+                <div class="opciones-grid">
+                    <button class="btn-opcion" onclick="responderQuiz(1, 'seca')">🌵 Seca, tirante o con descamación</button>
+                    <button class="btn-opcion" onclick="responderQuiz(1, 'grasa')">✨ Con exceso de brillo o poros dilatados</button>
+                    <button class="btn-opcion" onclick="responderQuiz(1, 'opaca')">💤 Cansada, apática o sin brillo</button>
+                </div>
+            </div>
+
+            <div id="quiz-paso2" class="quiz-paso">
+                <h3>2. ¿Cuál es tu objetivo principal hoy?</h3>
+                <div class="opciones-grid">
+                    <button class="btn-opcion" onclick="responderQuiz(2, 'limpieza')">🧼 Limpiar impurezas y puntos negros</button>
+                    <button class="btn-opcion" onclick="responderQuiz(2, 'hidratacion')">💧 Hidratación profunda y efecto glow</button>
+                    <button class="btn-opcion" onclick="responderQuiz(2, 'firmeza')">👑 Tonificar y revitalizar rostro</button>
+                </div>
+            </div>
+
+            <div id="quiz-resultado" class="quiz-resultado">
+                <span class="badge-recomendado">Sugerencia de Valentina</span>
+                <h3 id="resultado-titulo">Tratamiento Recomendado</h3>
+                <p id="resultado-desc">Cargando sugerencia...</p>
+                <button id="resultado-btn" class="btn-principal" onclick="reservarEspecial('Diagnóstico Recomendado')">Agendar Este Tratamiento</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE TRATAMIENTOS -->
+    <section id="servicios" class="servicios-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Experiencia de Lujo</span>
+            <h2 class="titulo-seccion">Nuestros Tratamientos</h2>
+            <p class="descripcion-seccion">Selecciona una categoría para explorar nuestros protocolos especializados.</p>
+            
+            <div class="filtros-categoria">
+                <button class="btn-filtro activo" onclick="filtrarServicios('todos', this)">Todos</button>
+                <button class="btn-filtro" onclick="filtrarServicios('faciales', this)">Faciales</button>
+                <button class="btn-filtro" onclick="filtrarServicios('corporales', this)">Corporales</button>
+                <button class="btn-filtro" onclick="filtrarServicios('tecnologia', this)">Tecnología & Anti-Age</button>
+            </div>
+        </div>
+
+        <div class="servicios-grid">
+            <article class="tarjeta-servicio faciales">
+                <div class="tarjeta-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Limpieza Facial Profunda">
+                    <span class="servicio-badge">Más Solicitado</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h3>Limpieza Facial Profunda</h3>
+                    <p>Desintoxicación cutánea completa. Vapor ozono, extracción de comedones, alta frecuencia y mascarilla descongestiva.</p>
+                    <div class="servicio-detalles">
+                        <span>⏱ 60 min</span>
+                        <span class="precio">$45 USD</span>
+                    </div>
+                    <div class="tarjeta-acciones">
+                        <button class="btn-mas-info" onclick="verDetallesTratamiento('limpieza')">✦ Ver Ficha Técnica</button>
+                        <button class="btn-tarjeta" onclick="reservarEspecial('Limpieza Facial Profunda')">Agendar Cita</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tarjeta-servicio faciales">
+                <div class="tarjeta-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1512290900673-0487928d2d9c?auto=format&fit=crop&w=600&q=80" alt="Hidratación Ácido Hialurónico">
+                    <span class="servicio-badge">HydraGlow</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h3>Hidratación Ácido Hialurónico</h3>
+                    <p>Infusión de humedad intensiva. Devuelve la elasticidad, restaura la barrera cutánea y aporta un brillo radiante instantáneo.</p>
+                    <div class="servicio-detalles">
+                        <span>⏱ 50 min</span>
+                        <span class="precio">$55 USD</span>
+                    </div>
+                    <div class="tarjeta-acciones">
+                        <button class="btn-mas-info" onclick="verDetallesTratamiento('hidratacion')">✦ Ver Ficha Técnica</button>
+                        <button class="btn-tarjeta" onclick="reservarEspecial('Hidratación Ácido Hialurónico')">Agendar Cita</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="tarjeta-servicio tecnologia">
+                <div class="tarjeta-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80" alt="Radiofrecuencia Reafirmante">
+                    <span class="servicio-badge">Lifting</span>
+                </div>
+                <div class="tarjeta-cuerpo">
+                    <h3>Radiofrecuencia Reafirmante</h3>
+                    <p>Estimulación térmica de colágeno y elastina. Tonifica el óvalo facial, cuello y reafirma contornos sin agujas.</p>
+                    <div class="servicio-detalles">
+                        <span>⏱ 60 min</span>
+                        <span class="precio">$75 USD</span>
+                    </div>
+                    <div class="tarjeta-acciones">
+                        <button class="btn-mas-info" onclick="verDetallesTratamiento('radiofrecuencia')">✦ Ver Ficha Técnica</button>
+                        <button class="btn-tarjeta" onclick="reservarEspecial('Radiofrecuencia Reafirmante')">Agendar Cita</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- GALERÍA RITUAL & SPA -->
+    <section id="galeria" class="galeria-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Ambiente & Texturas</span>
+            <h2 class="titulo-seccion">La Experiencia Glow & Care</h2>
+            <p class="descripcion-seccion">Sumerge tus sentidos en un entorno concebido para el descanso y la regeneración.</p>
+        </div>
+
+        <div class="galeria-grid">
+            <div class="galeria-item item-grande">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Estudio Spa Valentina">
+                <div class="galeria-overlay"><span>✦ El Espacio</span></div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Tratamiento Suero Botánico">
+                <div class="galeria-overlay"><span>✦ Principios Activos</span></div>
+            </div>
+            <div class="galeria-item">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Mascarilla de Hidratación">
+                <div class="galeria-overlay"><span>✦ Aplicación Profesional</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARADOR ANTES & DESPUÉS -->
+    <section id="antes-despues" class="antes-despues-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Resultados Comprobados</span>
+            <h2 class="titulo-seccion">Transformación Real</h2>
+            <p class="descripcion-seccion">Desliza la barra para observar el cambio en textura y luminosidad tras el protocolo HydraGlow.</p>
+        </div>
+
+        <div class="comparator-container">
+            <div class="img-despues">
+                <img src="https://images.unsplash.com/photo-1512290900673-0487928d2d9c?auto=format&fit=crop&w=900&q=80" alt="Piel Después">
+                <span class="tag-label label-despues">DESPUÉS (Glow & Care)</span>
+            </div>
+            <div class="img-antes" id="imgAntes">
+                <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=80" alt="Piel Antes">
+                <span class="tag-label label-antes">ANTES</span>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider-comparador" id="sliderComparador" oninput="moverComparador(this.value)">
+            <div class="linea-divisor" id="lineaDivisor"></div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: UBICACIÓN & HORARIOS -->
+    <section id="ubicacion" class="ubicacion-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Visítanos</span>
+            <h2 class="titulo-seccion">Estudio & Horarios</h2>
+            <p class="descripcion-seccion">Un espacio privado diseñado para brindarte comodidad y privacidad absoluta.</p>
+        </div>
+
+        <div class="ubicacion-container">
+            <div class="ubicacion-card">
+                <h3>Glow & Care Studio</h3>
+                <p>📍 <strong>Dirección:</strong> Av. Principal de Estética #123, Consultorio 402</p>
+                <p>🕒 <strong>Horarios de Atención:</strong></p>
+                <ul>
+                    <li>Lunes a Viernes: 9:00 AM – 7:00 PM</li>
+                    <li>Sábados: 9:00 AM – 3:00 PM</li>
+                    <li>Domingos y Festivos: Cerrado</li>
+                </ul>
+                <p class="nota-agenda">⚠️ <em>Atención exclusivamente con cita previa reservada.</em></p>
+                <a href="https://maps.google.com" target="_blank" class="btn-principal btn-block">🗺️ Abrir en Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="faq" class="faq-seccion revelar">
+        <div class="encabezado-seccion">
+            <span class="subtitulo-dorado">Resuelve tus Dudas</span>
+            <h2 class="titulo-seccion">Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="faq-contenedor">
+            <div class="faq-item">
+                <button class="faq-pregunta" onclick="toggleFaq(this)">
+                    <span>¿Cada cuánto tiempo debo realizarme una limpieza facial profunda?</span>
+                    <span class="faq-icono">+</span>
+                </button>
+                <div class="faq-respuesta">
+                    <p>Se aconseja cada 28 a 30 días para sincronizarlo con el proceso natural de renovación celular de la piel.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pregunta" onclick="toggleFaq(this)">
+                    <span>¿Saldré con el rostro enrojecido después de mi cita?</span>
+                    <span class="faq-icono">+</span>
+                </button>
+                <div class="faq-respuesta">
+                    <p>No. Todos los protocolos de Valentina incluyen mascarillas calmantes para desinflamar la piel y salir con una apariencia luminosa.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pregunta" onclick="toggleFaq(this)">
+                    <span>¿Cómo se realiza la evaluación previa?</span>
+                    <span class="faq-icono">+</span>
+                </button>
+                <div class="faq-respuesta">
+                    <p>Al iniciar tu cita, Valentina examina tu biotipo cutáneo, niveles de agua y sensibilidad para seleccionar los principios activos exactos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-brand">
+                <h2>Glow & Care</h2>
+                <p>Cosmetología por Valentina</p>
+            </div>
+            <div class="footer-info">
+                <p>📍 Dirección: Av. Principal de Estética #123</p>
+                <p>📱 WhatsApp Directo: +57 300 123 4567</p>
+            </div>
+            <p class="copyright">&copy; 2026 Glow & Care by Valentina. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE FICHA TÉCNICA DETALLADA -->
+    <div id="modalFicha" class="modal-overlay">
+        <div class="modal-card modal-ficha-card">
+            <button class="modal-cerrar" onclick="cerrarModalFicha()">&times;</button>
+            <span class="badge-recomendado">Ficha del Tratamiento</span>
+            <h3 id="fichaTitulo">Título Tratamiento</h3>
+            <div class="ficha-contenido-scroll">
+                <h4>✦ Beneficios Clave</h4>
+                <p id="fichaBeneficios">Beneficios del tratamiento...</p>
+                
+                <h4>✦ ¿Para quién está indicado?</h4>
+                <p id="fichaIndicaciones">Indicación del tratamiento...</p>
+
+                <h4>✦ Cuidados Posteriores</h4>
+                <p id="fichaCuidados">Cuidados post tratamiento...</p>
+            </div>
+            <button id="fichaBtnAgendar" class="btn-principal btn-block">Agendar Este Tratamiento</button>
+        </div>
+    </div>
+
+    <!-- MODAL DE RESERVA POR WHATSAPP -->
+    <div id="modalReserva" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-cerrar" onclick="cerrarModal()">&times;</button>
+            <div class="modal-header">
+                <h3>Reserva tu Cita con Valentina</h3>
+                <p>Completa tus datos para enviarle la solicitud directa por WhatsApp.</p>
+            </div>
+            <form id="formReserva" class="modal-form" onsubmit="procesarReservaWhatsApp(event)">
+                <div class="input-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombreCliente" placeholder="Ej. Mariana Gómez" required>
+                </div>
+                <div class="input-group">
+                    <label>Tratamiento de Interés</label>
+                    <select id="servicioSeleccionado" required>
+                        <option value="">Selecciona un servicio...</option>
+                        <option value="Limpieza Facial Profunda">Limpieza Facial Profunda</option>
+                        <option value="Hidratación Ácido Hialurónico">Hidratación Ácido Hialurónico</option>
+                        <option value="Radiofrecuencia Reafirmante">Radiofrecuencia Reafirmante</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-principal btn-block">💬 Enviar Cita a WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

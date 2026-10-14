@@ -1,0 +1,1022 @@
+/* ==========================================
+   1. PALETA ESMERALDA NOCHE & ORO GLASSMORPHISM
+   ========================================== */
+:root {
+    --fondo-esmeralda: #091B15;
+    --fondo-oscuro-header: #05100C;
+    
+    --tarjeta-glass: rgba(14, 38, 30, 0.65); 
+    --borde-glass: rgba(232, 211, 167, 0.28);
+    
+    --texto-claro: #F5EFE6;
+    --gris-suave: #A0B5AA;
+    --gris-tarjeta: #C2D4CB;
+    
+    --dorado-base: #C5A059;
+    --dorado-brillante: #E8D3A7;
+    --dorado-oscuro: #8E6D30;
+    --gradiente-dorado: linear-gradient(135deg, #B5924F 0%, #E8D3A7 50%, #C5A059 100%);
+
+    --fuente-titulos: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--fondo-esmeralda);
+    color: var(--texto-claro);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#goldCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================================
+   2. TICKER INFINITO DE INGREDIENTES
+   ========================================== */
+.ticker-wrapper {
+    background: #05100C;
+    border-bottom: 1px solid var(--borde-glass);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: tickerMove 25s linear infinite;
+}
+
+.ticker-content span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dorado-brillante);
+    margin-right: 35px;
+    font-weight: 600;
+}
+
+@keyframes tickerMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ==========================================
+   3. ENCABEZADO
+   ========================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8%;
+    background-color: rgba(5, 16, 12, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borde-glass);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-svg {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.4));
+}
+
+.logo-texto-bloque {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-titulo {
+    font-family: var(--fuente-titulos);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    background: var(--gradiente-dorado);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.logo-subtitulo {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--gris-suave);
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--texto-claro);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--dorado-brillante);
+}
+
+.btn-nav {
+    border: 1px solid var(--dorado-base);
+    padding: 8px 18px;
+    color: var(--dorado-brillante) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-nav:hover {
+    background: var(--gradiente-dorado);
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+/* ==========================================
+   4. HERO
+   ========================================== */
+.hero {
+    position: relative;
+    z-index: 2;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-contenido {
+    max-width: 800px;
+}
+
+.badge-hero {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dorado-brillante);
+    border: 1px solid var(--borde-glass);
+    padding: 7px 22px;
+    border-radius: 50px;
+    background-color: rgba(197, 160, 89, 0.08);
+    margin-bottom: 25px;
+}
+
+.hero-contenido h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 60px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: var(--texto-claro);
+    font-weight: 400;
+}
+
+.hero-contenido p {
+    font-size: 16px;
+    color: var(--gris-suave);
+    margin-bottom: 38px;
+    font-weight: 300;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn-principal {
+    display: inline-block;
+    padding: 15px 34px;
+    background: var(--gradiente-dorado);
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(197, 160, 89, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.5);
+}
+
+.btn-secundario {
+    padding: 15px 34px;
+    background: transparent;
+    color: var(--texto-claro);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================
+   5. RITUAL DE ATENCIÓN
+   ========================================== */
+.ritual-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 90px 8%;
+}
+
+.ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ritual-paso {
+    background: var(--tarjeta-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--borde-glass);
+    padding: 30px 22px;
+    border-radius: 8px;
+}
+
+.num-paso {
+    font-family: var(--fuente-titulos);
+    font-size: 38px;
+    color: var(--dorado-brillante);
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ritual-paso h4 {
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    color: var(--texto-claro);
+    margin-bottom: 8px;
+}
+
+.ritual-paso p {
+    font-size: 12px;
+    color: var(--gris-tarjeta);
+    line-height: 1.5;
+}
+
+/* ==========================================
+   6. PREPARACIÓN PRE-CITA
+   ========================================== */
+.precita-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 90px 8%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.precita-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.precita-card {
+    background: var(--tarjeta-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--borde-glass);
+    padding: 30px 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.precita-icono {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.precita-card h4 {
+    font-family: var(--fuente-titulos);
+    font-size: 22px;
+    color: var(--dorado-brillante);
+    margin-bottom: 10px;
+}
+
+.precita-card p {
+    font-size: 13px;
+    color: var(--gris-tarjeta);
+}
+
+/* ==========================================
+   7. SOBRE VALENTINA
+   ========================================== */
+.sobre-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--borde-glass);
+    border-bottom: 1px solid var(--borde-glass);
+}
+
+.sobre-contenedor {
+    display: flex;
+    gap: 55px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.sobre-imagen-wrapper {
+    flex: 1 1 380px;
+    position: relative;
+    border: 1px solid var(--borde-glass);
+    padding: 12px;
+    background: var(--fondo-oscuro-header);
+    border-radius: 6px;
+}
+
+.sobre-imagen-wrapper img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.sobre-badge-exp {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: var(--gradiente-dorado);
+    color: #000000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.sobre-texto {
+    flex: 1 1 450px;
+}
+
+.sobre-texto h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 46px;
+    margin: 10px 0;
+    color: var(--texto-claro);
+}
+
+.resaltado {
+    color: var(--dorado-brillante);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.pilares-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.pilar-item {
+    display: flex;
+    gap: 14px;
+}
+
+.pilar-icono {
+    color: var(--dorado-base);
+}
+
+/* ==========================================
+   8. TEST DE PIEL
+   ========================================== */
+.test-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+}
+
+.test-card {
+    background: var(--tarjeta-glass);
+    backdrop-filter: blur(12px);
+    color: var(--texto-claro);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 45px;
+    border: 1px solid var(--borde-glass);
+    border-radius: 8px;
+}
+
+.quiz-paso { display: none; }
+.quiz-paso.activo { display: block; }
+
+.quiz-paso h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.opciones-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btn-opcion {
+    padding: 16px 22px;
+    background: rgba(5, 16, 12, 0.6);
+    border: 1px solid var(--borde-glass);
+    font-size: 13px;
+    color: var(--texto-claro);
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--fuente-cuerpo);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-opcion:hover {
+    border-color: var(--dorado-brillante);
+    background: rgba(197, 160, 89, 0.15);
+}
+
+.quiz-resultado { display: none; text-align: center; }
+.quiz-resultado.activo { display: block; }
+
+.badge-recomendado {
+    display: inline-block;
+    background: var(--dorado-base);
+    color: #000000;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 14px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+.quiz-resultado h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   9. CATÁLOGO DE TRATAMIENTOS
+   ========================================== */
+.servicios-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+}
+
+.subtitulo-dorado {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dorado-brillante);
+    font-weight: 600;
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulos);
+    font-size: 46px;
+    margin: 10px 0;
+    color: var(--texto-claro);
+}
+
+.filtros-categoria {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background: rgba(5, 16, 12, 0.6);
+    border: 1px solid var(--borde-glass);
+    color: var(--gris-suave);
+    padding: 9px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-filtro.activo, .btn-filtro:hover {
+    background: var(--gradiente-dorado);
+    color: #000000;
+    font-weight: 700;
+}
+
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+.tarjeta-servicio {
+    background: var(--tarjeta-glass);
+    backdrop-filter: blur(12px);
+    color: var(--texto-claro);
+    border: 1px solid var(--borde-glass);
+    border-radius: 8px;
+    width: 320px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+    border-color: var(--dorado-brillante);
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+}
+
+.tarjeta-servicio.oculto { display: none; }
+
+.tarjeta-img-wrapper {
+    position: relative;
+    height: 180px;
+}
+
+.tarjeta-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.servicio-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--dorado-base);
+    color: #000000;
+    font-size: 9px;
+    padding: 4px 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.tarjeta-cuerpo {
+    padding: 25px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.tarjeta-servicio h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.tarjeta-servicio p {
+    font-size: 13px;
+    color: var(--gris-tarjeta);
+    margin-bottom: 22px;
+}
+
+.servicio-detalles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--borde-glass);
+    padding-top: 14px;
+    margin-bottom: 18px;
+    font-size: 12px;
+}
+
+.precio {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--dorado-brillante);
+    font-family: var(--fuente-titulos);
+}
+
+.tarjeta-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-mas-info {
+    background: transparent;
+    border: none;
+    color: var(--dorado-brillante);
+    font-size: 11px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-tarjeta {
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid var(--dorado-base);
+    color: var(--dorado-brillante);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.btn-tarjeta:hover {
+    background: var(--gradiente-dorado);
+    color: #000000;
+}
+
+/* ==========================================
+   10. GALERÍA VOGUE GRID
+   ========================================== */
+.galeria-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.galeria-item {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--borde-glass);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.08);
+}
+
+.galeria-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 16, 12, 0.4);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.galeria-overlay span {
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    color: var(--dorado-brillante);
+}
+
+/* ==========================================
+   11. ANTES & DESPUÉS
+   ========================================== */
+.antes-despues-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+}
+
+.comparator-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    height: 420px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid var(--dorado-base);
+    border-radius: 6px;
+}
+
+.img-despues, .img-antes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img-despues img, .img-antes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-antes { width: 50%; overflow: hidden; }
+
+.tag-label {
+    position: absolute;
+    top: 15px;
+    background: rgba(5, 16, 12, 0.88);
+    color: var(--texto-claro);
+    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 2px;
+}
+
+.label-antes { left: 15px; }
+.label-despues { right: 15px; }
+
+.slider-comparador {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+.linea-divisor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--dorado-brillante);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* ==========================================
+   12. UBICACIÓN & HORARIOS
+   ========================================== */
+.ubicacion-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ubicacion-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ubicacion-card {
+    background: var(--tarjeta-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--borde-glass);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ubicacion-card h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 32px;
+    color: var(--dorado-brillante);
+    margin-bottom: 20px;
+}
+
+.ubicacion-card p {
+    font-size: 14px;
+    color: var(--gris-tarjeta);
+    margin-bottom: 15px;
+}
+
+.ubicacion-card ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.ubicacion-card li {
+    font-size: 13px;
+    color: var(--texto-claro);
+    margin-bottom: 8px;
+}
+
+.nota-agenda {
+    font-size: 12px;
+    color: var(--dorado-brillante);
+    margin: 20px 0 !important;
+}
+
+/* ==========================================
+   13. FAQ Y MODAL
+   ========================================== */
+.faq-seccion {
+    position: relative;
+    z-index: 2;
+    padding: 95px 8%;
+}
+
+.faq-contenedor {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    border: 1px solid var(--borde-glass);
+    background: var(--tarjeta-glass);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+}
+
+.faq-pregunta {
+    width: 100%;
+    padding: 22px;
+    background: transparent;
+    border: none;
+    color: var(--texto-claro);
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.faq-respuesta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 22px;
+    color: var(--gris-tarjeta);
+    font-size: 13px;
+}
+
+.faq-item.activo .faq-respuesta {
+    max-height: 150px;
+    padding: 0 22px 22px 22px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 16, 12, 0.88);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo { opacity: 1; pointer-events: all; }
+
+.modal-card {
+    background: var(--fondo-oscuro-header);
+    color: var(--texto-claro);
+    padding: 35px;
+    width: 90%;
+    max-width: 480px;
+    position: relative;
+    border: 1px solid var(--dorado-base);
+    border-radius: 8px;
+}
+
+.modal-ficha-card h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 32px;
+    margin: 10px 0 15px 0;
+    color: var(--dorado-brillante);
+}
+
+.ficha-contenido-scroll {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gris-suave);
+}
+
+.input-group { margin-bottom: 16px; }
+
+.input-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: var(--dorado-brillante);
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 11px;
+    background: rgba(14, 38, 30, 0.8);
+    border: 1px solid var(--borde-glass);
+    color: var(--texto-claro);
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.btn-block { width: 100%; margin-top: 10px; }
+
+.footer {
+    position: relative;
+    z-index: 2;
+    background-color: var(--fondo-oscuro-header);
+    color: var(--texto-claro);
+    padding: 45px 20px;
+    text-align: center;
+    border-top: 1px solid var(--borde-glass);
+}
+
+.footer-brand h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 28px;
+    background: var(--gradiente-dorado);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-info { font-size: 12px; color: var(--gris-suave); margin: 15px 0; }
+.copyright { font-size: 11px; color: #4B6358; }
+
+/* ==========================================
+   14. RESPONSIVE MÓVIL
+   ========================================== */
+@media (max-width: 768px) {
+    .header { flex-direction: column; gap: 15px; padding: 15px 5%; }
+    .nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .hero-contenido h2 { font-size: 38px; }
+    .hero-botones { flex-direction: column; }
+    .sobre-contenedor { gap: 30px; }
+    .comparator-container { height: 280px; }
+}
